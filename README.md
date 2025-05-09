@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Prueba Técnica Frontend Sr.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Instalación
 
-Currently, two official plugins are available:
+1. Clona el repositorio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```sh
+   git clone https://github.com/ElisaME/todo-test.git
+   ```
 
-## Expanding the ESLint configuration
+2. Instala los paquetes de NPM
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```sh
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Ejecuta el proyecto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```sh
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Descripción de la prueba:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Para la prueba técnica, se deberá crear un sistema de tareas. Este sistema deberá
+permitirte crear nuevas tareas, actualizarlas y consultarlas.
+
+### Las categorías iniciales deberán ser:
+
+- Trabajo
+- Estudio
+- Casa
+- Familia
+- Diversión
+
+### Funcionalidades obligatorias son:
+
+- Consultar tareas pendientes / finalizadas (listas sólo las 6 últimas y deberán
+  verse en su respectivo apartado)
+
+- Crear tareas, cuando se cree una tarea se deberá asignar un color aleatorio
+  que no se repita
+- Actualizar estado de tarea a tarea finalizada, una vez que se finalice la tarea deberá dejar de verse en pendientes y se verá en finalizadas
+
+### Funcionalidades extras:
+
+- [x] Paginador de tareas
+- [x] Eliminar Tareas
+- [x] Crear categorías
+- Login (iniciar sesión/cerrar sesión)
+
+El frontend deberá ser trabajado con ReactJs, puedes utilizar las librerías y los
+hooks que quieras, busca optimizar el rendimiento de la aplicación.
+La data que consumirás deberá venir de un Json, que se deberá guardar en
+storage, actualizarse y consumirse desde ahí.
+El tiempo estimado para esta prueba en de 2-3 días, una vez que lo tengas
+terminado deberás compartir el repositorio de github, en el readMe deberás poner
+las instrucciones para poder correr el proyecto en local.
