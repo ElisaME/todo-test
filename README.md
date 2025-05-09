@@ -1,4 +1,4 @@
-# Prueba Técnica Frontend Sr.
+# Prueba Técnica Frontend
 
 ## 🚀 Instalación
 
@@ -35,12 +35,12 @@ permitirte crear nuevas tareas, actualizarlas y consultarlas.
 
 ### Funcionalidades obligatorias son:
 
-- Consultar tareas pendientes / finalizadas (listas sólo las 6 últimas y deberán
-  verse en su respectivo apartado)
+- [x] Consultar tareas pendientes / finalizadas (listas sólo las 6 últimas y deberán
+      verse en su respectivo apartado)
 
-- Crear tareas, cuando se cree una tarea se deberá asignar un color aleatorio
-  que no se repita
-- Actualizar estado de tarea a tarea finalizada, una vez que se finalice la tarea deberá dejar de verse en pendientes y se verá en finalizadas
+- [x] Crear tareas, cuando se cree una tarea se deberá asignar un color aleatorio
+      que no se repita
+- [x] Actualizar estado de tarea a tarea finalizada, una vez que se finalice la tarea deberá dejar de verse en pendientes y se verá en finalizadas
 
 ### Funcionalidades extras:
 
@@ -48,11 +48,3 @@ permitirte crear nuevas tareas, actualizarlas y consultarlas.
 - [x] Eliminar Tareas
 - [x] Crear categorías
 - Login (iniciar sesión/cerrar sesión)
-
-El frontend deberá ser trabajado con ReactJs, puedes utilizar las librerías y los
-hooks que quieras, busca optimizar el rendimiento de la aplicación.
-La data que consumirás deberá venir de un Json, que se deberá guardar en
-storage, actualizarse y consumirse desde ahí.
-El tiempo estimado para esta prueba en de 2-3 días, una vez que lo tengas
-terminado deberás compartir el repositorio de github, en el readMe deberás poner
-las instrucciones para poder correr el proyecto en local.
