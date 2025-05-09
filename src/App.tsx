@@ -58,7 +58,11 @@ const App = (): JSX.Element => {
 					</div>
 				</div>
 				<div className="col-span-9">
-					<Todos isOpen={isOpen} closeModal={() => setIsOpen(false)} />
+					<Todos
+						isOpen={isOpen}
+						closeModal={() => setIsOpen(false)}
+						categories={categories}
+					/>
 				</div>
 				{modalCategory && (
 					<NewCategory

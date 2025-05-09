@@ -1,12 +1,13 @@
 import { useState, type ChangeEvent } from 'react';
-import { type Todo } from './types';
+import { type Category, type Todo } from './types';
 
 interface Props {
 	add: (task: Todo) => void;
 	closeModal: () => void;
+	categories: Category[];
 }
 
-const NewTask = ({ add, closeModal }: Props) => {
+const NewTask = ({ add, closeModal, categories }: Props) => {
 	const usedColors = new Set<string>();
 	const [errors, setErrors] = useState<{
 		title?: boolean;
@@ -86,11 +87,11 @@ const NewTask = ({ add, closeModal }: Props) => {
 						onChange={(e) => handleChange(e)}
 					>
 						<option value={''}>Selecciona una opción</option>
-						<option value={'trabajo'}>Trabajo</option>
-						<option value={'estudio'}>Estudio</option>
-						<option value={'casa'}>Casa</option>
-						<option value={'familia'}>Familia</option>
-						<option value={'diversión'}>Diversión</option>
+						{categories?.map((category, i) => (
+							<option key={i} value={category.name}>
+								{category.name.toUpperCase()}
+							</option>
+						))}
 					</select>
 				</div>
 				<textarea

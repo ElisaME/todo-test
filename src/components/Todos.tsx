@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import type { ListOfTodos, Todo } from './types';
+import type { Category, ListOfTodos, Todo } from './types';
 import NewTask from './NewTask';
 
 interface Props {
 	isOpen: boolean;
 	closeModal: () => void;
+	categories: Category[];
 }
-export const Todos = ({ isOpen, closeModal }: Props) => {
+export const Todos = ({ isOpen, closeModal, categories }: Props) => {
 	const [tasksData, setTasksData] = useState<ListOfTodos>([]);
 	const [filteredData, setFilteredData] = useState<ListOfTodos>([]);
 	const [status, setStatus] = useState(false);
@@ -51,21 +52,12 @@ export const Todos = ({ isOpen, closeModal }: Props) => {
 		closeModal();
 	};
 
-	const getCategoryColor = (category: string) => {
-		switch (category?.toLowerCase()) {
-			case 'trabajo':
-				return '#fb2c36';
-			case 'estudio':
-				return '#0080ff';
-			case 'casa':
-				return '#b34cff';
-			case 'familia':
-				return '#00c75b';
-			case 'diversión':
-				return '#f6b100';
-			default:
-				return '#d1d5db';
-		}
+	const getCategoryColor = (categoryName: string): string => {
+		const normalized = categoryName.toLowerCase().trim();
+		const category = categories.find(
+			(cat) => cat.name.toLowerCase().trim() === normalized
+		);
+		return category?.color || '#000000';
 	};
 
 	return (
@@ -146,7 +138,13 @@ export const Todos = ({ isOpen, closeModal }: Props) => {
 					Siguiente
 				</button>
 			</div>
-			{isOpen && <NewTask add={addTask} closeModal={closeModal} />}
+			{isOpen && (
+				<NewTask
+					add={addTask}
+					closeModal={closeModal}
+					categories={categories}
+				/>
+			)}
 		</div>
 	);
 };
